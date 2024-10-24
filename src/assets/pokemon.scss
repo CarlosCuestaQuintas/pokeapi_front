@@ -1,0 +1,23 @@
+#caja {
+    width: 200px;
+    height: 324px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+
+        img {
+            display: block;
+            margin: 10px auto;
+            width: 75%;
+            background-color: white;
+        }
+
+        #nombre {
+            position: absolute;
+            width: 100%;
+            text-transform: uppercase;
+            color: white;
+            bottom:20px;
+            text-align:center;
+        }
+}
