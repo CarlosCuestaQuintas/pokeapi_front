@@ -16,16 +16,10 @@
         pokemon: Object
     });
 
-    // console.log(pokemon.name);
     let imagen = ref();
     
     onBeforeMount(async() => {
-        // pokemon -> sprites -> other -> official-artwork
         console.log("url: " + props.pokemon.url);
-        // let data = ref();
-        // fetch(props.pokemon.url).then(response => response.json()).then((data) => {
-        //     console.log(data);
-        // });
 
         let data = await fetch(props.pokemon.url);
         data = await data.json();
