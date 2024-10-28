@@ -1,11 +1,15 @@
 <template>
   <main>
     <img alt="Pokedex logo" class="logo" src="./assets/pokeball.svg" width="125" height="125" />
-    <div class="contenedor" v-for="i in 30">
-      <div class="fila" v-for="j in 5">
+    <!-- <div class="contenedor" v-for="i in 30">
+      <div class="fila" v-for="j in 5"> -->
         <!-- {{ (i-1)*5 + j-1 }} {{ listaPokemon[5*(i-1)+j-1] }} -->
-        <Pokemon class="pokemon" :pokemon=listaPokemon[5*(i-1)+j-1] />
+        <!-- <Pokemon class="pokemon" :pokemon=listaPokemon[5*(i-1)+j-1] />
       </div>
+    </div> -->
+
+    <div class="contenedor">
+      <Pokemon v-for="pokemon in listaPokemon" :pokemon=pokemon />
     </div>
   </main>
 </template>

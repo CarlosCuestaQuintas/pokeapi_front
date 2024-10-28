@@ -11,8 +11,11 @@ main {
     background-color: #3443eb;
 
     .contenedor {
+        width: 1300px;
         display: flex;
-        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
         margin: 20px auto;
         
         .fila {
