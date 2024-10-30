@@ -1,6 +1,4 @@
 <template>
-    <img alt="Pokedex logo" class="logo" src="../assets/pokeball.svg" width="125" height="125" />
-
     <div id="contenedor">
       <PokemonComponent v-for="pokemon in listaPokemon" :pokemon=pokemon />
     </div>
