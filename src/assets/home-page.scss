@@ -1,0 +1,12 @@
+#contenedor {
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px auto;
+    
+    .fila {
+        margin: 0 auto;
+    }
+}
