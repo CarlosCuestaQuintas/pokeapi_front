@@ -9,7 +9,7 @@
     </div> -->
 
     <div class="contenedor">
-      <Pokemon v-for="pokemon in listaPokemon" :pokemon=pokemon />
+      <PokemonComponent v-for="pokemon in listaPokemon" :pokemon=pokemon />
     </div>
   </main>
 </template>
@@ -20,7 +20,7 @@
 
 <script setup>
   import { ref, onBeforeMount, onMounted } from 'vue';
-  import Pokemon from './components/Pokemon.vue';
+  import PokemonComponent from './components/PokemonComponent.vue';
   let listaPokemon = ref([]);
 
   onBeforeMount(async() => {
