@@ -15,6 +15,7 @@ dist-ssr
 coverage
 *.local
 package-lock.json
+cosas_varias
 
 /cypress/videos/
 /cypress/screenshots/
