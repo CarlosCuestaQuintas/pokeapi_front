@@ -5,7 +5,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
   @import 'assets/app.scss';
 </style>
 
