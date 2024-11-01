@@ -7,25 +7,10 @@
         <div>{{ datos.nombres[i-1] }}</div>
         <div>{{ datos.tipos[i-1] }}</div>
     </div>
-    <!-- <div class="caja" v-for="movimiento in movimientos">
-        <div>{{ movimiento.move.name }}</div>
-        <div>{{ movimiento.move.url }}</div>
-        <div v-for="elemento in movimiento">
-            {{ elemento }}
-        </div>
-    </div> -->
 </template>
 
 <style scoped>
     @import '../assets/pokemon-page.scss';
-    div {
-        margin-top: 20px;
-    }
-
-    .caja {
-        margin: 20px;
-        border: 2px black solid;
-    }
 </style>
 
 <script setup>
