@@ -3,9 +3,12 @@
     <router-link id="subtitulo" to="/">
         <div>Atrás</div>
     </router-link>
-    <div class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length">
+    <!-- <div class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length">
         <div>{{ datos.nombres[i-1] }}</div>
         <div>{{ datos.tipos[i-1] }}</div>
+    </div> -->
+    <div id="contenedor">
+        <MovimientoComponent class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tipo=datos.tipos[i-1] />
     </div>
 </template>
 
@@ -14,6 +17,7 @@
 </style>
 
 <script setup>
+    import MovimientoComponent from '@/components/MovimientoComponent.vue';
     import { ref, onBeforeMount } from 'vue';
     import { useRoute } from 'vue-router';
 
