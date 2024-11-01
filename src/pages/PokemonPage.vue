@@ -8,7 +8,7 @@
         <div>{{ datos.tipos[i-1] }}</div>
     </div> -->
     <div id="contenedor">
-        <MovimientoComponent class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tipo=datos.tipos[i-1] />
+        <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tipo=datos.tipos[i-1] />
     </div>
 </template>
 
