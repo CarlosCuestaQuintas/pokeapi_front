@@ -7,14 +7,17 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
+            /*
+                Tal y como estaba antes el router daba la siguiente advertencia:
+                [Vue Router warn]: The route named "home" has a child without a name and an empty path. Using that name won't render the empty path child so you probably want to move the name to the child instead. If this is intentional, add a name to the child route to remove the warning.   [router.js:6]
+                La única manera que me ha ocurrido de solucionarla es quitar el name del padre y ponérselo al hijo.
+                Además, parece indiferente poner '/' en el path del padre, del hijo, de ambos o de ninguno.
+            */
             path: '/',
-            name: 'home',
             children: [
                 {
-                    // TODO: Da una advertencia diciendo que home tiene un hijo sin nombre. ¿Tendría que poner esto sobre children?
-                    // Si pongo esto sobre children, elminando este hijo, no funciona. Creo que se soluciona poniendo aquí el name, pero me extraña
-                    // Tal vez lo que haya que hacer es no tener una ruta con hijos, sino cada ruta por separado y que una de ellas sea '/'
-                    path: '',
+                    path: '/',
+                    name: 'home',
                     component: HomePage
                 },
                 {

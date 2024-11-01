@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
     @import '../assets/home-page.scss';
 </style>
 

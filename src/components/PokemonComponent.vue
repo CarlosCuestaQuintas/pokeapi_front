@@ -20,7 +20,7 @@
     let imagen = ref();
     
     onBeforeMount(async() => {
-        console.log("url: " + props.pokemon.url);
+        // console.log("url: " + props.pokemon.url);
 
         let data = await fetch(props.pokemon.url);
         data = await data.json();
