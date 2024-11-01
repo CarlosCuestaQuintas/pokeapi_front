@@ -1,5 +1,5 @@
 <template>
-    <div id="contenedor">
+    <div id="contenedor-movimiento">
         <div>{{ nombre }}</div>
         <div>{{ tipo }}</div>
     </div>
