@@ -1,8 +1,8 @@
 <template>
-    <router-link to="/">
+    <div id="titulo">ID de pokemon: {{ id }}</div>
+    <router-link id="subtitulo" to="/">
         <div>Atrás</div>
     </router-link>
-    <div>{{ id }}</div>
     <div class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length">
         <div>{{ datos.nombres[i-1] }}</div>
         <div>{{ datos.tipos[i-1] }}</div>
