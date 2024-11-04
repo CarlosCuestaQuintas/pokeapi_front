@@ -1,4 +1,4 @@
-#caja {
+.caja {
     width: 200px;
     height: 324px;
     border: 2px solid white;
@@ -12,7 +12,7 @@
             background-color: white;
         }
 
-        #nombre {
+        .nombre {
             position: absolute;
             width: 100%;
             text-transform: uppercase;

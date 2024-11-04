@@ -1,7 +1,7 @@
 <template>
-    <router-link id="caja" :pokemon=pokemon :to="{name: 'PokemonPage', params: {id: id}}">
+    <router-link class="caja" :pokemon=pokemon :to="{name: 'PokemonPage', params: {id: id}}">
         <img :src=imagen>
-        <div id="nombre">{{ pokemon.name }}</div>
+        <div class="nombre">{{ pokemon.name }}</div>
     </router-link>
 </template>
 

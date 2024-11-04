@@ -1,14 +1,14 @@
 <template>
-    <div id="titulo">ID de pokemon: {{ id }}</div>
-    <router-link id="subtitulo" to="/">
+    <div class="titulo">ID de pokemon: {{ id }}</div>
+    <router-link class="subtitulo" to="/">
         <div>Atrás</div>
     </router-link>
     <!-- <div class="caja" :class="datos.tipos[i-1]" v-for="i in datos.nombres.length">
         <div>{{ datos.nombres[i-1] }}</div>
         <div>{{ datos.tipos[i-1] }}</div>
     </div> -->
-    <div id="contenedor">
-        <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tipo=datos.tipos[i-1] />
+    <div class="contenedor">
+        <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tclassipo=datos.tipos[i-1] />
     </div>
 </template>
 

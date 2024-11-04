@@ -1,16 +1,16 @@
-#titulo {
+.titulo {
     text-align: center;
     font-size: 60px;
     color: white;
     text-shadow: black 1px 0 10px;
 }
 
-#subtitulo {
+.subtitulo {
     text-align: center;
     font-size: 20px;
 }
 
-#contenedor {
+.contenedor {
     display: flex;
     flex-wrap: wrap;
 }

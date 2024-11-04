@@ -1,7 +1,7 @@
 <template>
     <!-- <router-link to="prueba">prueba</router-link> -->
     <!-- <router-link :to="{name: 'prueba'}">prueba</router-link> -->
-    <div id="contenedor">
+    <div class="contenedor">
         <!-- <PokemonComponent v-for="pokemon in listaPokemon" :pokemon=pokemon /> -->
         <!-- i-1 porque empieza en 1, no en 0 -->
         <PokemonComponent v-for="i in listaPokemon.length" :id=i :pokemon=listaPokemon[i-1] />
