@@ -26,7 +26,7 @@ img {
 }
 
 .transparencia {
-    display: none;
+    // display: none; // Esto sobra porque le ponemos el display:none en el onMounted
     position: fixed;
     top: 0;
     left: 0;
@@ -38,8 +38,8 @@ img {
 .caja-flotante {
     position: relative;
     margin:auto;
-    color: white;
     top: 25%;
+    // ¿Altura y anchura fijas?
     width: 50%;
     height: 50%;
     border: 2px solid black;

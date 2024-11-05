@@ -54,7 +54,8 @@
             datos.tipos[i-1])" />
     </div>
 
-    <template class="transparencia" v-on:click="prueba()">
+    <template class="transparencia" 
+    v-on:click="prueba()">
         <div class="caja-flotante undefined">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum tenetur dolores laboriosam commodi dolorum veritatis vitae rem corrupti, modi tempora quod labore repellat recusandae impedit minima totam? Rerum, nobis adipisci?</div>
     </template>
 </template>
@@ -100,19 +101,19 @@
         sprites.value = data.sprites;
     });    
 
-    // Funciones (bajarlo y quitar las líneas de depuración)
     function prueba(nombre, tipo) {
         let t = document.querySelector(".transparencia");
-        console.log(t);
-        nombre ? console.log("texto") : console.log("no texto");
-        (t.style.display=="none") ? console.log("sí") : console.log("no");
+        nombre ? console.log(nombre) : console.log("Implementar el funcionamiento en la llamada del div y quitar esta línea");
+        // (t.style.display=="none") ? console.log("sí") : console.log("no");
         (t.style.display=="none") ? t.style.display = "block" : t.style.display = "none";
-        let c = document.querySelector(".caja-flotante");
-        console.log(c.classList);
-        // c.classList.add(tipo);
-        c.classList.replace(c.classList[1], tipo);
-        console.log(c.classList);
-        // t.style.display = "block";
+        // Solo se sustituye la clase en caso de que se especifique un tipo. Cuando se cambia el display del contenedor a none no importa que se quede la clase anterior.
+        // IMPORTANTE: si el div no tiene una segunda clase (es decir, si no tiene classList[1]) no funciona, porque nada es sustituido
+        if (tipo) {
+            // Si hiciésemos esto fuera del if sin especificar tipo entonces se sustituiría la clase existente por la clase undefined
+            let c = document.querySelector(".caja-flotante");
+            c.classList.replace(c.classList[1], tipo);
+        }
+        // c.textContent="prueba";
     }
 
     onMounted(() => {
