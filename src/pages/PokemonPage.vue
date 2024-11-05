@@ -8,7 +8,11 @@
         <div>{{ datos.tipos[i-1] }}</div>
     </div> -->
     <div class="contenedor">
-        <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length" :nombre=datos.nombres[i-1] :tclassipo=datos.tipos[i-1] />
+        <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length"
+        :nombre=datos.nombres[i-1]
+        :tclassipo=datos.tipos[i-1]
+        :pp=datos.pps[i-1]
+        :poder=datos.poderes[i-1] />
     </div>
 </template>
 
@@ -27,7 +31,9 @@
     let datos = ref(
         {
             "nombres": [],
-            "tipos": []
+            "tipos": [],
+            "pps": [],
+            "poderes": []
         }
     );
 
@@ -42,6 +48,8 @@
             .then((data) => {
                 datos.value.nombres.push(data.name);
                 datos.value.tipos.push(data.type.name);
+                datos.value.pps.push(data.pp);
+                datos.value.poderes.push(data.power);
             });
         }
 
