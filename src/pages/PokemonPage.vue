@@ -46,7 +46,7 @@
     <div class="contenedor">
         <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length"
         :nombre=datos.nombres[i-1]
-        :tclassipo=datos.tipos[i-1]
+        :tipo=datos.tipos[i-1]
         :pp=datos.pps[i-1]
         :poder=datos.poderes[i-1]
         v-on:click="prueba(
