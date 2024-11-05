@@ -7,6 +7,11 @@
         <div>{{ datos.nombres[i-1] }}</div>
         <div>{{ datos.tipos[i-1] }}</div>
     </div> -->
+
+    <div class="contenedor">
+
+    </div>
+
     <div class="contenedor">
         <MovimientoComponent :class="datos.tipos[i-1]" v-for="i in datos.nombres.length"
         :nombre=datos.nombres[i-1]
@@ -52,7 +57,5 @@
                 datos.value.poderes.push(data.power);
             });
         }
-
-        console.log(datos.value.tipos);
     });
 </script>

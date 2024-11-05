@@ -2,8 +2,8 @@
     <div class="contenedor-movimiento">
         <div class="mayus">{{ nombre }}</div>
         <div>{{ tipo }}</div>
-        <div>PP {{ pp }}</div>
-        <div>Poder {{ poder }}</div>
+        <div>PP: {{ pp }}</div>
+        <div v-if="poder">Poder: {{ poder }}</div>
     </div>
 </template>
 
