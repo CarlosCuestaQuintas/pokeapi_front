@@ -49,14 +49,19 @@
         :tipo=datos.tipos[i-1]
         :pp=datos.pps[i-1]
         :poder=datos.poderes[i-1]
-        v-on:click="prueba(
+        v-on:click="transicion(
             datos.nombres[i-1],
             datos.tipos[i-1])" />
     </div>
 
     <template class="transparencia" 
-    v-on:click="prueba()">
-        <div class="caja-flotante undefined">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum tenetur dolores laboriosam commodi dolorum veritatis vitae rem corrupti, modi tempora quod labore repellat recusandae impedit minima totam? Rerum, nobis adipisci?</div>
+    v-on:click="transicion()">
+        <div class="caja-flotante undefined">
+            <div class="nombre-movimiento mayus"></div>
+            <div class="contenedor-gif">
+                <img :src=gif alt="gif">
+            </div>
+        </div>
     </template>
 </template>
 
@@ -99,21 +104,32 @@
             });
         }
         sprites.value = data.sprites;
-    });    
+    });
 
-    function prueba(nombre, tipo) {
+    // No puedo hacer lo siguiente porque el cors no lo permite, y una respuesta opaca (mode:"no-cors") no nos vale
+    // fetch("https://www.pocketmonsters.net/dex/move/13",{mode:"no-cors"}).then((data) => console.log(data));
+    let gif = ref();
+
+    function transicion(nombre, tipo) {
         let t = document.querySelector(".transparencia");
-        nombre ? console.log(nombre) : console.log("Implementar el funcionamiento en la llamada del div y quitar esta línea");
-        // (t.style.display=="none") ? console.log("sí") : console.log("no");
         (t.style.display=="none") ? t.style.display = "block" : t.style.display = "none";
-        // Solo se sustituye la clase en caso de que se especifique un tipo. Cuando se cambia el display del contenedor a none no importa que se quede la clase anterior.
+        
         // IMPORTANTE: si el div no tiene una segunda clase (es decir, si no tiene classList[1]) no funciona, porque nada es sustituido
         if (tipo) {
+            document.querySelector(".nombre-movimiento").textContent = nombre;
             // Si hiciésemos esto fuera del if sin especificar tipo entonces se sustituiría la clase existente por la clase undefined
             let c = document.querySelector(".caja-flotante");
             c.classList.replace(c.classList[1], tipo);
+            
+            // Esto lo dejo aquí de momento hasta saber hacer lo del gif
+            gif.value = "https://media.pocketmonsters.net/dex/moves/" + nombre.replace(/-/g,"") + ".gif";
+            /*
+            TODO: gestionar correctamente el gif
+            Fase 1: saber si el recurso solicitado existe o no (200/404) para poner el gif o una imagen de error (guardada en el proyecto)
+            Fase 2: estudiar todos los casos posibles en cuanto a la url del gif (tiene guiones, no tiene, etc) e implementar la lógica apropiada
+            De momento no he podido hacerlo ni usando fetch (ni siquiera en modo no-cors), ni usando XMLHttpRequest. No soy capaz de saber si devuelve un 200 o un 404.
+            */
         }
-        // c.textContent="prueba";
     }
 
     onMounted(() => {
