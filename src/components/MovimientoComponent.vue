@@ -8,7 +8,7 @@
 </template>
 
 <style scoped>
-    @import '../assets/movimiento.scss';
+    @import '../assets/scss/movimiento.scss';
 </style>
 
 <script setup>

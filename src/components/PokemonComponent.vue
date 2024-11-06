@@ -6,7 +6,7 @@
 </template>
 
 <style scoped>
-    @import '../assets/pokemon.scss';
+    @import '../assets/scss/pokemon.scss';
 </style>
 
 <script setup>

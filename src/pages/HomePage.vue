@@ -9,7 +9,7 @@
 </template>
 
 <style scoped>
-    @import '../assets/home-page.scss';
+    @import '../assets/scss/home-page.scss';
 </style>
 
 <script setup>
